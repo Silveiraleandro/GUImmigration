@@ -4,12 +4,17 @@
  * and open the template in the editor.
  */
 package viewnova;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
+import modelnova.Person;
 
 /**
  *
  * @author user
  */
 public class ViewDataIn extends javax.swing.JFrame {
+    
+    Person p;
     
     
 
@@ -76,6 +81,11 @@ public class ViewDataIn extends javax.swing.JFrame {
 
         btnSave.setText("SAVE");
         btnSave.setEnabled(false);
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaveActionPerformed(evt);
+            }
+        });
 
         btnQueue.setText("QUEUE");
         btnQueue.addActionListener(new java.awt.event.ActionListener() {
@@ -220,6 +230,15 @@ public class ViewDataIn extends javax.swing.JFrame {
     private void txtFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFirstNameActionPerformed
+
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        p.setFirstName(txtFirstName.getText());
+        p.setFirstName(txtLastName.getText());
+        //how to get the ArrivalDate
+        p.setPassportNumber(txtPassNumber.getText());
+        //how to get the Priority
+        JOptionPane.showMessageDialog(this, );
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
      * @param args the command line arguments
